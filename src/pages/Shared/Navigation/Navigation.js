@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container,  Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 // import { HashLink } from 'react-router-hash-link';
 import './Navigation.css'
 const Navigation = () => {
+  const {user,logOut} = useAuth()
     return (
         <>
         
@@ -13,11 +15,19 @@ const Navigation = () => {
           <Navbar.Toggle />
     <Navbar.Collapse className="justify-content-end navbar-spacing">
     <Link style={{textDecoration : 'none'}} className='text-white'  to="/home">Home</Link>
-    {/* <Link className='text-white' style={{textDecoration : 'none',}} to="/addProduct">Add  Product</Link>  */}
-   
-      <Navbar.Text>
-        Signed in as: <a href="#login">Mark Otto</a>
+   {
+   user?.email ? 
+   <button onClick={logOut} className='btn btn-danger'>Logout</button>
+   :
+     <Link to='/login'>
+   <button  className='btn text-white'>Login</button>
+   </Link>
+   }
+      {/* {
+        user?.email && <Navbar.Text>
+        Signed in as: <a href="#login">{user?.displayName}</a>
       </Navbar.Text>
+      } */}
     </Navbar.Collapse>
           </Container>
         </Navbar>

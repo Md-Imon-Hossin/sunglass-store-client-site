@@ -20,9 +20,7 @@ const Products = () => {
                 ></Product>)
             }
            </div>
-           
-           
-           
+
         </div>
     );
 };

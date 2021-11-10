@@ -1,0 +1,9 @@
+.eyeglass-flex{
+    display: flex; 
+    align-items: center;
+}
+.eyeglassTwo-flex{
+    display: flex; 
+    align-items: center;
+    text-align: left;
+}

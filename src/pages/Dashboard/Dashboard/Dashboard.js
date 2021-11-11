@@ -15,12 +15,26 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+  } from "react-router-dom";
+import Pay from '../Pay/Pay';
+import MyOrders from '../MyOrders/MyOrders';
+import Review from '../Review/Review';
+import Logout from '../Logout/Logout';
+import useAuth from '../../../hooks/useAuth';
 const drawerWidth = 240;
 
 function Dashboard(props) {
+    const {logOut} = useAuth()
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  let { path, url } = useRouteMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -30,6 +44,22 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
+   <Link to={`${url}/pay`}>
+   <p>Pay</p>
+   </Link>
+   <Link to={`${url}/myOrders`}>
+   <p>My Orders</p>
+   </Link>
+   <Link to={`${url}/review`}>
+   <p>Review</p>
+   </Link>
+   <Link to={`${url}/logOut`}>
+   <p onClick={logOut}>Logout</p>
+   </Link>
+
+
+
+
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
@@ -107,9 +137,32 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
+        {/* <Typography paragraph>
          Content Here
-        </Typography>
+        </Typography> */}
+
+<Switch>
+        <Route exact path={path}>
+            {/* component bosano */}
+        </Route>
+        <Route  path={`${path}/pay`}>
+       <Pay></Pay>
+        </Route>
+        <Route path={`${path}/myOrders`}>
+       <MyOrders></MyOrders>
+        </Route>
+        <Route path={`${path}/review`}>
+       <Review></Review>
+        </Route>
+        <Route path={`${path}/logOut`}>
+       <Logout></Logout>
+        </Route>
+        
+      </Switch>
+
+
+
+
         
       </Box>
     </Box>

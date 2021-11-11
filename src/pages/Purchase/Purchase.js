@@ -16,8 +16,8 @@ const Purchase = () => {
         .then(data=>setProduct(data))
     },[])
     // console.log(product)
-    const onSubmit = data => {
-        data.email = email
+    const onSubmit = (data) => {
+      data.email = email ;
         fetch("http://localhost:5000/confirmOrder",{
             method : 'POST',
             headers : {"content-type" : "application/json"},
@@ -55,7 +55,7 @@ const Purchase = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("email", )} placeholder='Email' defaultValue={user?.email} />
 
-      <input {...register("name", { required: true, maxLength: 20 })} placeholder='Name' defaultValue={product?.name} />
+      <input {...register("name", )} placeholder='Name' defaultValue={product?.name} />
 
       <textarea {...register("description", )} placeholder='Description' defaultValue={product?.description} />
 

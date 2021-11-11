@@ -43,6 +43,10 @@ const useFirebase = ()=>{
         .then((userCredential) => {
       const destination = location?.state?.from || '/'
       history.replace(destination)
+// ====== my order added extra add ====================
+      setUser(userCredential.user)
+      sessionStorage.setItem("email",userCredential.user.email)
+
           setAuthError('')
         })
         .catch((error) => {

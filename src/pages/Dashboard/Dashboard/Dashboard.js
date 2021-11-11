@@ -30,6 +30,8 @@ import Logout from '../Logout/Logout';
 import useAuth from '../../../hooks/useAuth';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -64,7 +66,17 @@ function Dashboard(props) {
    </Link>
    <Link to={`${url}/addProduct`}>
    <p>Add A Product</p>
-   </Link></Box>}
+   </Link>
+   <Link to={`${url}/manageAllOrders`}>
+   <p>Manage All Orders</p>
+   </Link>
+   <Link to={`${url}/manageProducts`}>
+   <p>Manage Products</p>
+   </Link>
+   
+   </Box>
+   
+   }
 
    <Link to={`${url}/logOut`}>
    <p onClick={logOut}>Logout</p>
@@ -95,6 +107,7 @@ function Dashboard(props) {
       <AppBar
         position="fixed"
         sx={{
+          mt : 8,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
@@ -105,7 +118,7 @@ function Dashboard(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2,  display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
@@ -156,7 +169,6 @@ function Dashboard(props) {
 
 <Switch>
         <Route exact path={path}>
-            {/* component bosano */}
         </Route>
         <Route  path={`${path}/pay`}>
        <Pay></Pay>
@@ -175,14 +187,15 @@ function Dashboard(props) {
         </Route>
         <Route path={`${path}/addProduct`}>
        <AddProduct></AddProduct>
-        </Route>
-        
+        </Route>    
+        <Route path={`${path}/manageAllOrders`}>
+       <ManageAllOrders></ManageAllOrders>
+        </Route>    
+        <Route path={`${path}/manageProducts`}>
+       <ManageProducts></ManageProducts>
+        </Route>    
+
       </Switch>
-
-
-
-
-        
       </Box>
     </Box>
   );

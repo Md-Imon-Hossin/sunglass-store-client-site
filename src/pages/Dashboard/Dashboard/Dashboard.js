@@ -15,6 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -32,9 +33,12 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import Products from '../../Home/Products/Products';
 const drawerWidth = 240;
 
 function Dashboard(props) {
+  const [control,setControl] = React.useState('addProducts')
+  console.log(control)
     const {logOut} = useAuth()
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -187,14 +191,30 @@ function Dashboard(props) {
         </Route>
         <Route path={`${path}/addProduct`}>
        <AddProduct></AddProduct>
-        </Route>    
+        </Route> 
         <Route path={`${path}/manageAllOrders`}>
        <ManageAllOrders></ManageAllOrders>
-        </Route>    
-        <Route path={`${path}/manageProducts`}>
-       <ManageProducts></ManageProducts>
-        </Route>    
+      
+        </Route> 
 
+
+           
+
+        <Route  path={`${path}/manageProducts`}>
+
+       <li style={{listStyle : 'none'}} onClick={()=>setControl('products')}>
+       <ManageProducts ></ManageProducts>
+       <div>
+         <h2>Mange All Products</h2>
+         {
+           control === "products" && <Products></Products>
+         }
+       </div>
+       </li>
+       
+        </Route>    
+        
+      
       </Switch>
       </Box>
     </Box>

@@ -28,6 +28,8 @@ import MyOrders from '../MyOrders/MyOrders';
 import Review from '../Review/Review';
 import Logout from '../Logout/Logout';
 import useAuth from '../../../hooks/useAuth';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddProduct from '../AddProduct/AddProduct';
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -35,6 +37,7 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
+ const {admin} = useAuth()
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -45,7 +48,7 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
    <Link to={`${url}/pay`}>
-   <p>Pay</p>
+   <p >Pay</p>
    </Link>
    <Link to={`${url}/myOrders`}>
    <p>My Orders</p>
@@ -53,6 +56,16 @@ function Dashboard(props) {
    <Link to={`${url}/review`}>
    <p>Review</p>
    </Link>
+
+  { admin && <Box>
+    
+    <Link to={`${url}/makeAdmin`}>
+   <p>Make Admin</p>
+   </Link>
+   <Link to={`${url}/addProduct`}>
+   <p>Add A Product</p>
+   </Link></Box>}
+
    <Link to={`${url}/logOut`}>
    <p onClick={logOut}>Logout</p>
    </Link>
@@ -156,6 +169,12 @@ function Dashboard(props) {
         </Route>
         <Route path={`${path}/logOut`}>
        <Logout></Logout>
+        </Route>
+        <Route path={`${path}/makeAdmin`}>
+       <MakeAdmin></MakeAdmin>
+        </Route>
+        <Route path={`${path}/addProduct`}>
+       <AddProduct></AddProduct>
         </Route>
         
       </Switch>

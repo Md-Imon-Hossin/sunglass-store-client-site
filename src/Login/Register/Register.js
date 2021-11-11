@@ -1,15 +1,16 @@
 import { Alert, Button, CircularProgress, TextField, Typography } from '@mui/material';
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
   
 const Register = () => {
     // useState 
-    const [loginData,setLoginData] = useState({})  
+    const [loginData,setLoginData] = useState({})
+    const history = useHistory()  
     const {authError, user ,registerUser,isLoading} = useAuth()
     // Handle OnChange 
-    const handleOnChange = e=>{
+    const handleOnBlur = e=>{
     const field = e.target.name ;
     const value = e.target.value ;
     const newLoginData = {...loginData} 
@@ -22,7 +23,7 @@ const Register = () => {
             alert('Password did not match')
             return
         }
-        registerUser(loginData.email, loginData.password) 
+        registerUser(loginData.email, loginData.password,history,loginData.name) 
         e.preventDefault() 
     }
     return (
@@ -35,10 +36,18 @@ const Register = () => {
     <TextField
     sx={{width : '50%', m : 1}}
      id="standard-basic" 
+     type='text'
+     label="Name" 
+     name = 'name' 
+     onBlur = {handleOnBlur}
+     variant="standard" />
+    <TextField
+    sx={{width : '50%', m : 1}}
+     id="standard-basic" 
      type='email'
      label="Email" 
      name = 'email' 
-     onChange = {handleOnChange}
+     onBlur = {handleOnBlur}
      variant="standard" />
      <br />
     <TextField
@@ -47,7 +56,7 @@ const Register = () => {
      type='password'
      label="Password"
      name = 'password' 
-     onChange= {handleOnChange} 
+     onBlur= {handleOnBlur} 
      variant="standard" />
     <TextField
     sx={{width : '50%', m : 1}}
@@ -55,7 +64,7 @@ const Register = () => {
      type='password'
      label="Retype Password"
      name = 'password2' 
-     onChange= {handleOnChange} 
+     onBlur= {handleOnBlur} 
      variant="standard" />
  <br />
  <Button sx={{width : '50%'}} className='my-3' variant='contained' type='submit'>Register</Button>

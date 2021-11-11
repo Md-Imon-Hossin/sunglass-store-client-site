@@ -1,12 +1,13 @@
 import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import Hudai from './Hudai/Hudai';
 import Login from './Login/Login/Login';
 import PrivateRoute from './Login/PrivateRoute/PrivateRoute';
 import Register from './Login/Register/Register';
 import AddHomeProduct from './pages/AddHomeProduct/AddHomeProduct';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Home from './pages/Home/Home/Home';
+import Purchase from './pages/Purchase/Purchase';
 import Footer from './pages/Shared/Footer/Footer';
 import Navigation from './pages/Shared/Navigation/Navigation';
 
@@ -36,11 +37,17 @@ function App() {
     <Route path='/register'>
       <Register></Register>
     </Route>
-
-    {/* Hudai */}
-    <PrivateRoute path='/hudai'>
-      <Hudai></Hudai>
+    <PrivateRoute path='/dashboard'>
+      <Dashboard></Dashboard>
     </PrivateRoute>
+    <PrivateRoute exact path='/purchase/:productId'>
+      <Purchase></Purchase>
+    </PrivateRoute>
+    <PrivateRoute exact path='/purchase'>
+      <Purchase></Purchase>
+    </PrivateRoute>
+
+  
 
     
      </Switch>

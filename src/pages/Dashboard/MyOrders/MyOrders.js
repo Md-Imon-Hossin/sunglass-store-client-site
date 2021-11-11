@@ -4,26 +4,28 @@ import React, { useEffect, useState } from 'react';
 const MyOrders = () => {
     const email = sessionStorage.getItem('email') 
     const [services,setServices] = useState([])
-    // const [control,setControl] = useState(false) 
+    const [control,setControl] = useState(false) 
     useEffect(()=>{
         fetch(`http://localhost:5000/myOrders/${email}`)
         .then(res=>res.json())
         .then(data=>setServices(data))
-    },[])
+    },[control])
     // // Handle Delete 
-    // const handleDelete = (id)=>{
-    //     fetch(`http://localhost:5000/deleteOrder/${id}`,{
-    //         method : 'DELETE',
-    //     })
-    //     .then(res=>res.json()) 
-    //     .then(data=>{
-    //         if(data.deletedCount){
-    //             setControl(!control)
-    //         }
-    //         console.log(data)
-    //     })
+    const handleDelete = (id)=>{
+        console.log(id)
+        fetch(`http://localhost:5000/deleteOrder/${id}`,{
+            method : 'DELETE',
+        })
+        .then(res=>res.json()) 
+        // .then(data=>console.log(data))
+        .then(data=>{
+            if(data.deletedCount){
+                setControl(!control)
+            }
+            console.log(data)
+        })
         
-    // }
+    }
     return (
         <div>
             <h2>My Orders</h2>
@@ -42,7 +44,7 @@ const MyOrders = () => {
           <h5 className="card-title">{service?.name}</h5>
           <h5 className="card-title">Price : {service?.price}</h5>
           <p className="card-text">{service?.description}</p>
-          <Button  variant='contained'>Cancel</Button>
+          <Button onClick={()=> handleDelete(service?._id)} variant='contained'>Cancel</Button>
         </div>
       </div>
                                 </div>

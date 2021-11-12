@@ -17,6 +17,7 @@ const Navigation = () => {
     <Navbar.Collapse className="justify-content-end navbar-spacing">
     <Link style={{textDecoration : 'none'}} className='text-white'  to="/home">Home</Link>
     <Link style={{textDecoration : 'none'}} className='text-white'  to="/purchase">Purchase</Link>
+    <Link style={{textDecoration : 'none'}} className='text-white'  to="/explore">Explore</Link>
    {
    user?.email ? 
    <Box>

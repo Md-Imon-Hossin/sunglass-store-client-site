@@ -1,6 +1,6 @@
 import { Button, Link } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-
+import './ManageAllOrders.css'
 const ManageAllOrders = () => {
     const [orders,setOrders] = useState([]) 
     useEffect(()=>{
@@ -10,12 +10,13 @@ const ManageAllOrders = () => {
     },[])
     return (
         <div>
-            <h2>Manage All Orders {orders.length} </h2>
+            <h2 className='text-primary mb-3'>Manage All Orders {orders.length} </h2>
 
+            <div className='manageAllOrdersContainer'>
             {
                 orders.map(order=><div>
-                    <div class="card w-50 mb-3" >
-  <img src={order.img} class="card-img-top" alt="..."/>
+                    <div class="card h-100 mb-3" >
+  <img style={{width : '50%', margin : '0 auto'}} src={order.img} class="card-img-top" alt="..."/>
   <div class="card-body">
     <h5 class="card-title">{order.name}</h5>
     <h5 class="card-title">Price : {order.price}</h5>
@@ -27,6 +28,7 @@ const ManageAllOrders = () => {
 </div>
                 </div>)
             }
+            </div>
 
             
         </div>

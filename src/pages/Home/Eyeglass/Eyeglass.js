@@ -26,14 +26,14 @@ const Eyeglass = () => {
         <section className='py-4'>
             <div className="container">
                 <div className="row eyeglassTwo-flex">
-                    <div className="col-xl-6">
+                    <div className="col-xl-6 col-lg-6 col-md-12">
         <p>FRAMES FOR EVERY BUDGET
         </p>
         <h2 className='mb-3'>The One Stop Shop For All Your Eyewear Needs
         </h2>
         <p> Glasses correct vision by allowing your eyes to focus light on the correct spot of your retina. The curved frames bend light, and with the right prescription, these frames manipulate the light to reach the correct spot on your retina.</p>
                     </div>
-                    <div className="col-xl-6">
+                    <div className="col-xl-6 col-lg-6 col-md-12">
         <img src={glass2} className='img-fluid' alt="" />
                     </div>
                 </div>

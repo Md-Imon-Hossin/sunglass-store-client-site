@@ -6,6 +6,7 @@ import PrivateRoute from './Login/PrivateRoute/PrivateRoute';
 import Register from './Login/Register/Register';
 import AddHomeProduct from './pages/AddHomeProduct/AddHomeProduct';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import Explore from './pages/Home/Explore/Explore';
 import Home from './pages/Home/Home/Home';
 import Purchase from './pages/Purchase/Purchase';
 import Footer from './pages/Shared/Footer/Footer';
@@ -36,6 +37,9 @@ function App() {
     </Route>
     <Route path='/register'>
       <Register></Register>
+    </Route>
+    <Route path='/explore'>
+      <Explore></Explore>
     </Route>
     <PrivateRoute path='/dashboard'>
       <Dashboard></Dashboard>

@@ -10,7 +10,7 @@ const Explore = () => {
     },[])
     return (
         <div>
-            <h2>Explore Products</h2>
+            <h2 className='my-3'>Explore Products</h2>
             <div className='explore-container'>
             {                
                 productExplore.map(productExplores=><div>      

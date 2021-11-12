@@ -58,7 +58,7 @@ const MyOrders = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="col">
-                                <div className='card  mb-4'>
+                                <div className='card h-100 mb-4'>
         <img style={{width : "50%", margin : "0 auto"}} src={service?.img} className="card-img-top" alt="..."/>
         <div className="card-body">
           <h5 className="card-title">{service?.name}</h5>

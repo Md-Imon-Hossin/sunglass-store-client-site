@@ -199,14 +199,14 @@ function Dashboard(props) {
 </Route> 
 
        
-<Route  path={`${path}/manageProducts`}>
+{/* <Route  path={`${path}/manageProducts`}>
 <ManageProducts ></ManageProducts>
 
-</Route>    
+</Route>     */}
 
 
            
-{/* 
+
         <Route  path={`${path}/manageProducts`}>
 
        <li style={{listStyle : 'none'}} onClick={()=>setControl('products')}>
@@ -219,7 +219,7 @@ function Dashboard(props) {
        </div>
        </li>
        
-        </Route>     */}
+        </Route>    
         
       
       </Switch>

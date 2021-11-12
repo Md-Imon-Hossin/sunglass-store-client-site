@@ -21,7 +21,8 @@ const Explore = () => {
     <img style={{width : '50%',margin : '0 auto'}} src={productExplores?.img} className="card-img-top" alt="..." />
     <div className="card-body">
       <h5 className="card-title">{productExplores?.length}</h5>
-      <h5 className="card-title">{productExplores?.price}</h5>
+      <h5 className="card-title">{productExplores?.name}</h5>
+      <h5 className="card-title">Price : {productExplores?.price}</h5>
      <p className="card-text">{productExplores?.description}</p>
    </div>
    </div>

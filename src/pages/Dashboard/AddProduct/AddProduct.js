@@ -24,17 +24,17 @@ const AddProduct = () => {
       <br />
       <br />
       {/* include validation with required or other standard HTML validation rules */}
-      <input className='w-50' type='text' placeholder='Name' {...register("name", { required: true })} />
+      <input className='w-50' type='name' placeholder='Name' {...register("name")} />
       <br />
       <br />
-      <input className='w-50' placeholder='Price' type='number'  {...register("price", { required: true })} />
+      <input className='w-50' placeholder='Price' type='number'  {...register("price")} />
       <br />
       <br />
-      <textarea placeholder='Description' className='w-50'  {...register("description", { required: true })} />
+      <textarea placeholder='Description' className='w-50'  {...register("description")} />
       <br />
       
       {/* errors will return when field validation fails  */}
-      {errors.exampleRequired && <span>This field is required</span>}
+      {/* {errors.exampleRequired && <span>This field is required</span>} */}
       
       <input className='btn btn-danger' type="submit" />
     </form>

@@ -1,7 +1,6 @@
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import './MyOrders.css'
-// import Service from '../Service/Service';
 const MyOrders = () => {
     const email = sessionStorage.getItem('email') 
     const [services,setServices] = useState([])
@@ -11,22 +10,7 @@ const MyOrders = () => {
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[control])
-    // // Handle Delete 
-    // const handleDelete = (id)=>{
-    //     console.log(id)
-    //     fetch(`http://localhost:5000/deleteOrder/${id}`,{
-    //         method : 'DELETE',
-    //     })
-    //     .then(res=>res.json()) 
-    //     // .then(data=>console.log(data))
-    //     .then(data=>{
-    //         if(data.deletedCount){
-    //             setControl(!control)
-    //         }
-    //         console.log(data)
-    //     })
-        
-    // }
+   
      const handleDelete = (id)=>{
         const proceed = window.confirm('Are you sure, you want to delete?') 
         if(proceed){
@@ -56,9 +40,9 @@ const MyOrders = () => {
                    services?.map(service=>
                     <div>
                         <div className="container">
-                            <div className="row">
+                            <div className="row mb-3">
                                 <div className="col">
-                                <div className='card h-100 mb-4'>
+                                <div className='card h-100 '>
         <img style={{width : "50%", margin : "0 auto"}} src={service?.img} className="card-img-top" alt="..."/>
         <div className="card-body">
           <h5 className="card-title">{service?.name}</h5>

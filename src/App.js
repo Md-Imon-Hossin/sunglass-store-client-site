@@ -50,10 +50,6 @@ function App() {
     <PrivateRoute exact path='/purchase'>
       <Purchase></Purchase>
     </PrivateRoute>
-
-  
-
-    
      </Switch>
      <Footer></Footer>
      </Router>

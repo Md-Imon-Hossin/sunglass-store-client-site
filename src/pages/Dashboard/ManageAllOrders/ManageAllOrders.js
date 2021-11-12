@@ -1,4 +1,3 @@
-import { Button, Link } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import './ManageAllOrders.css'
 const ManageAllOrders = () => {
@@ -21,9 +20,7 @@ const ManageAllOrders = () => {
     <h5 class="card-title">{order.name}</h5>
     <h5 class="card-title">Price : {order.price}</h5>
     <p class="card-text">{order.description}</p>
-   {/* <Link>
-   <Button></Button>
-   </Link> */}
+   
   </div>
 </div>
                 </div>)

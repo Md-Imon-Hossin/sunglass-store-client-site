@@ -15,13 +15,12 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
 import {
-    BrowserRouter as Router,
+    // BrowserRouter as Router,
     Switch,
     Route,
     Link,
-    useParams,
+    // useParams,
     useRouteMatch
   } from "react-router-dom";
 import Pay from '../Pay/Pay';
@@ -44,7 +43,6 @@ function Dashboard(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
  const {admin} = useAuth()
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -64,7 +62,6 @@ function Dashboard(props) {
    </Link>
 
   { admin && <Box>
-    
     <Link to={`${url}/makeAdmin`}>
    <p>Make Admin</p>
    </Link>
@@ -77,7 +74,6 @@ function Dashboard(props) {
    <Link to={`${url}/manageProducts`}>
    <p>Manage Products</p>
    </Link>
-   
    </Box>
    
    }
@@ -85,9 +81,6 @@ function Dashboard(props) {
    <Link to={`${url}/logOut`}>
    <p onClick={logOut}>Logout</p>
    </Link>
-
-
-
 
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -104,7 +97,6 @@ function Dashboard(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -167,11 +159,8 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        {/* <Typography paragraph>
-         Content Here
-        </Typography> */}
-
-<Switch>
+        
+    <Switch>
         <Route exact path={path}>
         </Route>
         <Route  path={`${path}/pay`}>
@@ -193,22 +182,11 @@ function Dashboard(props) {
        <AddProduct></AddProduct>
         </Route> 
          
-
-<Route path={`${path}/manageAllOrders`}>
-<ManageAllOrders></ManageAllOrders>
-</Route> 
-
-       
-{/* <Route  path={`${path}/manageProducts`}>
-<ManageProducts ></ManageProducts>
-
-</Route>     */}
-
-
-           
+      <Route path={`${path}/manageAllOrders`}>
+      <ManageAllOrders></ManageAllOrders>
+      </Route> 
 
         <Route  path={`${path}/manageProducts`}>
-
        <li style={{listStyle : 'none'}} onClick={()=>setControl('products')}>
        <ManageProducts ></ManageProducts>
        <div>
@@ -218,10 +196,8 @@ function Dashboard(props) {
          }
        </div>
        </li>
-       
         </Route>    
         
-      
       </Switch>
       </Box>
     </Box>

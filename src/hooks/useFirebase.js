@@ -46,7 +46,6 @@ const useFirebase = ()=>{
         .then((userCredential) => {
       const destination = location?.state?.from || '/'
       history.replace(destination)
-// ====== my order added extra add ====================
       setUser(userCredential.user)
       sessionStorage.setItem("email",userCredential.user.email)
 
@@ -57,9 +56,6 @@ const useFirebase = ()=>{
         })
         .finally(()=>setIsLoading(false));
     }
-
-
-
 
     // observe user state
     useEffect(()=>{

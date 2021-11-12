@@ -19,11 +19,9 @@ const AddProduct = () => {
             <h2 className='mb-3'>Please Add a product</h2>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-      {/* register your input into the hook by invoking the "register" function */}
       <input className='w-50' placeholder='Image Url' {...register("img")} />
       <br />
       <br />
-      {/* include validation with required or other standard HTML validation rules */}
       <input className='w-50' type='name' placeholder='Name' {...register("name")} />
       <br />
       <br />
@@ -33,13 +31,8 @@ const AddProduct = () => {
       <textarea placeholder='Description' className='w-50'  {...register("description")} />
       <br />
       
-      {/* errors will return when field validation fails  */}
-      {/* {errors.exampleRequired && <span>This field is required</span>} */}
-      
       <input className='btn btn-danger' type="submit" />
     </form>
-
-
         </div>
     );
 };

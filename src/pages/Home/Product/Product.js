@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Product = ({product}) => {
     const {img,name,price,description} = product
     return (
-   <Card className='h-100 shadow '>
+   <Card className='h-100  '>
   <Card.Img variant="top" style={{width : '60%',margin : 'auto'}} src={img} />
   <Card.Body>
     <Card.Title>{name}</Card.Title>

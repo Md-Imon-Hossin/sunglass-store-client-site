@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Explore.css'
 const Explore = () => {
-    // const {img,name,price,description} = addProduct
 
     const [productExplore,setProductExplore] = useState([])
     useEffect(()=>{
@@ -13,10 +12,8 @@ const Explore = () => {
         <div>
             <h2>Explore Products</h2>
             <div className='explore-container'>
-            {
-                
-                productExplore.map(productExplores=><div>
-       
+            {                
+                productExplore.map(productExplores=><div>      
  <div className="card mb-3">
     <img style={{width : '50%',margin : '0 auto'}} src={productExplores?.img} className="card-img-top" alt="..." />
     <div className="card-body">
@@ -26,16 +23,13 @@ const Explore = () => {
      <p className="card-text">{productExplores?.description}</p>
    </div>
    </div>
- 
                  </div>
-                 
-                 
+
                  )
                  
              }
             </div>
-           
-        
+
         </div>
     );
 };

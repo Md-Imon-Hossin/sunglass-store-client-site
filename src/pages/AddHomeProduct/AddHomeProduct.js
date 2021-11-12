@@ -26,9 +26,6 @@ const AddHomeProduct = () => {
 
       <input className='btn btn-warning' type="submit" />
     </form>
-
-
-
         </div>
     );
 };

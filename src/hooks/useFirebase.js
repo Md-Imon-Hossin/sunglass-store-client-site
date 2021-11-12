@@ -72,7 +72,7 @@ const useFirebase = ()=>{
     },[])
        
     useEffect(()=>{
-      fetch(`http://localhost:5000/users/${user.email}`)
+      fetch(`https://agile-sea-88546.herokuapp.com/users/${user.email}`)
       .then(res=>res.json()) 
       .then(data=>setAdmin(data.admin))
     },[user.email])
@@ -88,7 +88,7 @@ const useFirebase = ()=>{
     // SaveUser 
     const saveUser = (email,displayName)=>{
    const user = {email,displayName} 
-   fetch('http://localhost:5000/users',{
+   fetch('https://agile-sea-88546.herokuapp.com/users',{
      method : 'POST',
      headers : {
        'content-type' : 'application/json'

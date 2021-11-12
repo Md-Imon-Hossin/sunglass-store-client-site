@@ -6,7 +6,7 @@ const MyOrders = () => {
     const [services,setServices] = useState([])
     const [control,setControl] = useState(false) 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`https://agile-sea-88546.herokuapp.com/myOrders/${email}`)
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[control])
@@ -15,7 +15,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure, you want to delete?') 
         if(proceed){
     
-            fetch(`http://localhost:5000/deleteOrder/${id}`,{
+            fetch(`https://agile-sea-88546.herokuapp.com/deleteOrder/${id}`,{
                 method : 'DELETE',
             })
             .then(res=>res.json()) 

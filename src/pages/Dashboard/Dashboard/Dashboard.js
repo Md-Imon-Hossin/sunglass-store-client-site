@@ -51,7 +51,8 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
-   <Link to={`${url}/pay`}>
+      { !admin && <Box>
+      <Link to={`${url}/pay`}>
    <p >Pay</p>
    </Link>
    <Link to={`${url}/myOrders`}>
@@ -60,6 +61,8 @@ function Dashboard(props) {
    <Link to={`${url}/review`}>
    <p>Review</p>
    </Link>
+      </Box>}
+ 
 
   { admin && <Box>
     <Link to={`${url}/makeAdmin`}>

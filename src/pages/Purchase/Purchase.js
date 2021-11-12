@@ -11,14 +11,14 @@ const Purchase = () => {
     const [product,setProduct] = useState({})
     const email = sessionStorage.getItem('email')
     useEffect(()=>{
-        fetch(`http://localhost:5000/singleProduct/${productId}`)
+        fetch(`https://agile-sea-88546.herokuapp.com/singleProduct/${productId}`)
         .then(res=>res.json())
         .then(data=>setProduct(data))
     },[])
     // console.log(product)
     const onSubmit = (data) => {
       data.email = email ;
-        fetch("http://localhost:5000/confirmOrder",{
+        fetch("https://agile-sea-88546.herokuapp.com/confirmOrder",{
             method : 'POST',
             headers : {"content-type" : "application/json"},
             body : JSON.stringify(data)
@@ -26,14 +26,7 @@ const Purchase = () => {
         .then(res=>res.json()) 
         .then(result=>console.log(result))
         console.log(data);
-        // axios.post('http://localhost:5000/products',data)
-        // .then(res=>{
-        //     if(res.data.insertedId){
-        //         alert('Added Successfully')
-        //         reset()
-        //     }
-        //     console.log(res) 
-        // })
+       
     } 
     return (
         <div className='form-container py-5'>
@@ -62,6 +55,7 @@ const Purchase = () => {
       <input type="number" {...register("price", )} placeholder='Price' defaultValue={product?.price}/>
 
       <input placeholder='Image Url' {...register("img", )} defaultValue={product?.img} />
+      <input placeholder='Address' {...register("address", )}  />
 
       <input placeholder='Phone' {...register("number", )} type='number' />
 

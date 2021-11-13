@@ -6,6 +6,7 @@ import PrivateRoute from './Login/PrivateRoute/PrivateRoute';
 import Register from './Login/Register/Register';
 import AddHomeProduct from './pages/AddHomeProduct/AddHomeProduct';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import Review from './pages/Dashboard/Review/Review';
 import Explore from './pages/Home/Explore/Explore';
 import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
@@ -38,6 +39,9 @@ function App() {
     </Route>
     <Route path='/register'>
       <Register></Register>
+    </Route>
+    <Route path='/review'>
+      <Review></Review>
     </Route>
     <Route path='/explore'>
       <Explore></Explore>

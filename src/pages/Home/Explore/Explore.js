@@ -4,7 +4,7 @@ const Explore = () => {
 
     const [productExplore,setProductExplore] = useState([])
     useEffect(()=>{
-        fetch(`https://agile-sea-88546.herokuapp.com/exploreProduct`)
+        fetch(`http://localhost:5000/products`)
         .then(res=>res.json()) 
         .then(data=>setProductExplore(data))
     },[])

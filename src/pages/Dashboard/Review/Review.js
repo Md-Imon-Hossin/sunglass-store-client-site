@@ -14,7 +14,7 @@ const Review = () => {
     } 
     return (
         <div>
-            <h2>This is  Review</h2>
+            <h2 >This is  Review</h2>
             
             <form onSubmit={handleSubmit(onSubmit)}>
       <input className='w-50' type='name' placeholder='Name' {...register("name")} />

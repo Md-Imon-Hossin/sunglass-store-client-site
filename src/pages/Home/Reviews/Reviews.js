@@ -14,7 +14,7 @@ const Reviews = () => {
     },[])
     return (
         <div>
-            <h2>Show Reviews</h2>
+            <h2 className='mb-4'>Show Reviews</h2>
             {/* <h2>This is reviews  {reviews.length} </h2> */}
             {/* <Rating name="read-only" value={value} readOnly /> */}
             {

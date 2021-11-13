@@ -8,6 +8,7 @@ import AddHomeProduct from './pages/AddHomeProduct/AddHomeProduct';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Explore from './pages/Home/Explore/Explore';
 import Home from './pages/Home/Home/Home';
+import NotFound from './pages/NotFound/NotFound';
 import Purchase from './pages/Purchase/Purchase';
 import Footer from './pages/Shared/Footer/Footer';
 import Navigation from './pages/Shared/Navigation/Navigation';
@@ -50,9 +51,13 @@ function App() {
     <PrivateRoute exact path='/purchase'>
       <Purchase></Purchase>
     </PrivateRoute>
+    <Route path='*'>
+      <NotFound></NotFound>
+    </Route>
      </Switch>
      <Footer></Footer>
      </Router>
+    
     </AuthProvider>
     </div>
   );

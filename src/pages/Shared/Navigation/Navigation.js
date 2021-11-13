@@ -23,6 +23,9 @@ const Navigation = () => {
    <button  className='btn text-white'>Dashboard</button>
    </Link>
  <button onClick={logOut} className='btn btn-danger'>Logout</button>
+ {user?.email &&<Navbar.Text>
+        Signed in as: <a href="#login">{user.displayName}</a>
+      </Navbar.Text>}
    </Box>
   
    :

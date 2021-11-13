@@ -1,9 +1,11 @@
+/* Products Container */
 .products-container{
     display: grid; 
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
     margin: 0 30px;
 }
+/* Products Responsive */
 @media (max-width : 1024px){
     .products-container{
         display: grid; 

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
@@ -14,8 +13,7 @@ const Purchase = () => {
         fetch(`https://agile-sea-88546.herokuapp.com/singleProduct/${productId}`)
         .then(res=>res.json())
         .then(data=>setProduct(data))
-    },[])
-    // console.log(product)
+    },[productId])
     const onSubmit = (data) => {
       data.email = email ;
         fetch("https://agile-sea-88546.herokuapp.com/confirmOrder",{

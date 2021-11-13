@@ -69,7 +69,7 @@ const useFirebase = ()=>{
             setIsLoading(false)
           });
           return ()=> unsubscribe
-    },[])
+    },[auth])
        
     useEffect(()=>{
       fetch(`https://agile-sea-88546.herokuapp.com/users/${user.email}`)
@@ -98,6 +98,7 @@ const useFirebase = ()=>{
    })
    .then()
     }
+    // Return
     return {
       admin,
         user ,

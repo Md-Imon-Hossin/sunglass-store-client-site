@@ -3,7 +3,7 @@ import React from 'react';
  import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit,  formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
         fetch(`https://agile-sea-88546.herokuapp.com/addProduct`,{

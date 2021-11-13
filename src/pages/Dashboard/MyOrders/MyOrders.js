@@ -9,8 +9,8 @@ const MyOrders = () => {
         fetch(`https://agile-sea-88546.herokuapp.com/myOrders/${email}`)
         .then(res=>res.json())
         .then(data=>setServices(data))
-    },[control])
-   
+    },[control,email])
+    //  Handle Delete
      const handleDelete = (id)=>{
         const proceed = window.confirm('Are you sure, you want to delete?') 
         if(proceed){
@@ -19,7 +19,6 @@ const MyOrders = () => {
                 method : 'DELETE',
             })
             .then(res=>res.json()) 
-            // .then(data=>console.log(data))
             .then(data=>{
                 if(data.deletedCount){
                     setControl(!control)

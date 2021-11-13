@@ -16,11 +16,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-    // BrowserRouter as Router,
     Switch,
     Route,
     Link,
-    // useParams,
     useRouteMatch
   } from "react-router-dom";
 import Pay from '../Pay/Pay';
@@ -63,7 +61,6 @@ function Dashboard(props) {
    </Link>
       </Box>}
  
-
   { admin && <Box>
     <Link to={`${url}/makeAdmin`}>
    <p>Make Admin</p>
@@ -78,13 +75,11 @@ function Dashboard(props) {
    <p>Manage Products</p>
    </Link>
    </Box>
-   
    }
 
    <Link to={`${url}/logOut`}>
    <p onClick={logOut}>Logout</p>
    </Link>
-
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
@@ -188,7 +183,6 @@ function Dashboard(props) {
       <Route path={`${path}/manageAllOrders`}>
       <ManageAllOrders></ManageAllOrders>
       </Route> 
-
         <Route  path={`${path}/manageProducts`}>
        <li style={{listStyle : 'none'}} onClick={()=>setControl('products')}>
        <ManageProducts ></ManageProducts>
@@ -206,7 +200,6 @@ function Dashboard(props) {
     </Box>
   );
 }
-
 Dashboard.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.

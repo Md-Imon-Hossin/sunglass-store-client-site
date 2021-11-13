@@ -14,9 +14,11 @@ const Reviews = () => {
         <div>
             <h2 className='mb-4'>Show Reviews</h2>
             <Container>
-            <Row lg={3}>
+            <Row xl={3} lg={3} md={2} sm={1}>
             {
-            reviews.map(review=><ShowReviews review={review}
+            reviews.map(review=><ShowReviews
+                key={review.name}
+                review={review}
                 >
                 </ShowReviews>)
             }

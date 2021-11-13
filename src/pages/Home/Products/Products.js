@@ -5,11 +5,7 @@ import './Products.css'
 const Products = () => {
     const limit = 6;
     const [products,setProducts] = useState([]) 
-    // useEffect(()=>{
-    //     fetch(`https://agile-sea-88546.herokuapp.com/products`)
-    //     .then(res=>res.json()) 
-    //     .then(data=>setProducts(data))
-    // },[])
+    
     useEffect(()=>{
         fetch(`https://agile-sea-88546.herokuapp.com/products/query?limit=${limit}`)
         .then(res=>res.json()) 

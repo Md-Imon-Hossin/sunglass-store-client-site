@@ -4,7 +4,7 @@ import glass1 from '../../../img/stylishman-1.jpg'
 import glass2 from '../../../img/stylishman-2.jpg'
 const Eyeglass = () => {
     return (
-        <div className='mb-3'>
+        <div className='mb-3 mt-4'>
             <section>
             <h2 className='mb-5'>Eyeglass</h2>
             <div className="container">

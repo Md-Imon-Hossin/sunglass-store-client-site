@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import ShowReviews from '../ShowReviews/ShowReviews';
 import './Reviews.css'
 const Reviews = () => {
@@ -13,15 +13,17 @@ const Reviews = () => {
     return (
         <div>
             <h2 className='mb-4'>Show Reviews</h2>
-            <Row lg={3} sm={1}>
+            <Container>
+            <Row lg={3}>
             {
             reviews.map(review=><ShowReviews review={review}
                 >
                 </ShowReviews>)
             }
-            
+                
             </Row>
-        
+            </Container>
+           
         </div>
     );
 };

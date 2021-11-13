@@ -8,6 +8,7 @@ Sunglasses protect your eyes by acting as a barrier that reflects UV rays. Sungl
 * Avoid headaches or migraines .
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was deployed with [Sunglass](https://sunglass-ff132.web.app/).
+This project was deployed with [Heroku](https://agile-sea-88546.herokuapp.com/).
 
 

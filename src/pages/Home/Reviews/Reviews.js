@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
 import ShowReviews from '../ShowReviews/ShowReviews';
 import './Reviews.css'
-// import Rating from '@mui/material/Rating';
-
 const Reviews = () => {
     const [reviews,setReviews] = useState([])
-    // const [value, setValue] = React.useState(2);
 
     useEffect(()=>{
         fetch(`https://agile-sea-88546.herokuapp.com/reviews`)
@@ -15,17 +13,14 @@ const Reviews = () => {
     return (
         <div>
             <h2 className='mb-4'>Show Reviews</h2>
-            {/* <h2>This is reviews  {reviews.length} </h2> */}
-            {/* <Rating name="read-only" value={value} readOnly /> */}
+            <Row lg={3} sm={1}>
             {
-            reviews.map(review=><ShowReviews
-            
-            review={review}
+            reviews.map(review=><ShowReviews review={review}
                 >
-
                 </ShowReviews>)
-        }
+            }
             
+            </Row>
         
         </div>
     );

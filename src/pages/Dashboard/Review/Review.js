@@ -20,13 +20,11 @@ const Review = () => {
       <input className='w-50' type='name' placeholder='Name' {...register("name")} />
       <br />
       <br />
-      {/* <input className='w-50' placeholder='Profession'   {...register("profession")} />
-      <br /> <br /> */}
+      <input className='w-50' type="text" placeholder='Profession'   {...register("profession")} />
+      <br /> <br />
       <input className='w-50' placeholder='Rating' type='number'  {...register("rating",{min:0,max:5})} />
       <br />
       <br />
-    
-      
       <textarea placeholder='Description' className='w-50'  {...register("description")} />
       <br />
       

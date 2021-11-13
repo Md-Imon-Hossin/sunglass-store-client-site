@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit,  formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
-        fetch(`https://agile-sea-88546.herokuapp.com/addProduct`,{
+        fetch(`https://agile-sea-88546.herokuapp.com/products`,{
             method : 'POST',
             headers : {'content-type' : 'application/json'},
             body: JSON.stringify(data)

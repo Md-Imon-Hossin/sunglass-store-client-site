@@ -10,7 +10,7 @@ const Navigation = () => {
         <>
         <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg" sticky='top'>
           <Container>
-          <Navbar.Brand href="#home">Sunglass</Navbar.Brand>
+          <Navbar.Brand href="#home">Sunglass Store</Navbar.Brand>
           <Navbar.Toggle />
     <Navbar.Collapse className="justify-content-end navbar-spacing">
     <Link style={{textDecoration : 'none'}} className='text-white'  to="/home">Home</Link>

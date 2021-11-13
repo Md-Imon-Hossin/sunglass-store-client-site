@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ShowReviews from '../ShowReviews/ShowReviews';
+import './Reviews.css'
 // import Rating from '@mui/material/Rating';
 
 const Reviews = () => {
@@ -13,9 +14,10 @@ const Reviews = () => {
     },[])
     return (
         <div>
-            <h2>This is reviews  {reviews.length} </h2>
+            <h2>Show Reviews</h2>
+            {/* <h2>This is reviews  {reviews.length} </h2> */}
             {/* <Rating name="read-only" value={value} readOnly /> */}
-        {
+            {
             reviews.map(review=><ShowReviews
             
             review={review}
@@ -23,6 +25,8 @@ const Reviews = () => {
 
                 </ShowReviews>)
         }
+            
+        
         </div>
     );
 };

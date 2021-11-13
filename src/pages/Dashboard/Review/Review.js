@@ -17,19 +17,16 @@ const Review = () => {
             <h2>This is  Review</h2>
             
             <form onSubmit={handleSubmit(onSubmit)}>
-      {/* <input className='w-50' placeholder='Image Url' {...register("img")} />
-      <br />
-      <br /> */}
       <input className='w-50' type='name' placeholder='Name' {...register("name")} />
       <br />
       <br />
-      <input className='w-50' placeholder='Price' type='number'  {...register("price")} />
-      <br /> <br />
+      {/* <input className='w-50' placeholder='Profession'   {...register("profession")} />
+      <br /> <br /> */}
       <input className='w-50' placeholder='Rating' type='number'  {...register("rating",{min:0,max:5})} />
       <br />
       <br />
-      <input className='w-50' placeholder='profession' type='text'  {...register("profession")} />
-      <br /><br />
+    
+      
       <textarea placeholder='Description' className='w-50'  {...register("description")} />
       <br />
       
